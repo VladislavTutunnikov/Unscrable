@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            UnscrambleTheme {
+            UnscrambleTheme(darkTheme = false) {
                 Surface(modifier = Modifier.fillMaxSize()) {
                     GameScreen()
                 }

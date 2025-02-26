@@ -2,8 +2,10 @@ package ru.tutunnikov.unscramble.ui
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -40,8 +42,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.compose.UnscrambleTheme
 import ru.tutunnikov.unscramble.R
-import ru.tutunnikov.unscramble.ui.theme.UnscrambleTheme
 
 @Composable
 fun GameScreen(
@@ -112,6 +114,7 @@ fun GameScreen(
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun GameLayout(
     updateHint: () -> Unit,
@@ -146,8 +149,10 @@ fun GameLayout(
                 text = currentScrambledWord,
                 style = MaterialTheme.typography.displayMedium,
                 modifier = Modifier
-                    .clickable(
-                        onClick = updateHint
+                    .combinedClickable(
+                        onClick = updateHint,
+                        interactionSource = null,
+                        indication = null,
                     )
             )
             Text(
