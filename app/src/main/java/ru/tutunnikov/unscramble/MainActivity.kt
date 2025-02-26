@@ -7,8 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.example.compose.UnscrambleTheme
 import ru.tutunnikov.unscramble.ui.GameScreen
-import ru.tutunnikov.unscramble.ui.theme.UnscrambleTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
